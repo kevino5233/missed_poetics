@@ -49,7 +49,6 @@ def getPoem():
     for item in poem_body.children:
         pass
     words = item.split()
-    # word_syllables = [(w,h_en.syllables(w)) for w in words]
     haiku_syllables = 0
     ind_syllables = 0
     debug_text = ''
@@ -97,7 +96,6 @@ def getPoem():
                 debug_text += 'c'
                 poem_text += word + ' '
         ind_syllables += 1
-    print debug_text
     obj = dict()
     obj['poem'] = poem_text
     obj['url'] = post_link

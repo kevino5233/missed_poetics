@@ -7,4 +7,5 @@ Made with BeautifulSoup, PyHyphen and Flask
 # TODO
 
 Caching of poem text via SQLite
+
 More accurate syllable counting
