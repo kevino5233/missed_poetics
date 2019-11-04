@@ -1,0 +1,45 @@
+<!doctype html>
+<head>
+    <title>Sample Template</title>
+    <script src="jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <div id="poem-div"></div>
+    <button type="button" onclick="getRequest()">Blah</button>
+    <button type="button" onclick="getPoem()">Get Another Poem</button>
+</body>
+<script>
+function getRequest() {
+    const req = $.get( "/World", function(data) {
+        var elem = document.getElementById('poem-div');
+        const poem_data = JSON.parse(data);
+        elem.innerHTML = poem_data['poem'];
+    });
+}
+
+var poem_urls = [];
+var poem_idx = 1;
+
+function getPoem() {
+    const req = $.get("/poem", {post_link: poem_urls[poem_idx]}, function(data) {
+        var elem = document.getElementById('poem-div');
+        const poem_data = JSON.parse(data);
+        elem.innerHTML = poem_data['poem']
+        console.log(poem_data);
+    });
+    poem_idx++;
+    if (poem_idx >= poem_urls.length) {
+        poem_idx = 0;
+    }
+}
+
+window.addEventListener('load', (event) => {
+    const req = $.get("/poem_links", function(data) {
+        poem_urls = JSON.parse(data);
+        // console.log(poem_urls);
+        getPoem();
+    });
+
+});
+
+</script>
