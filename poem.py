@@ -1,11 +1,3 @@
-import sys
-sys.path.insert(1, "C:\\Users\\Kevino\\source\\requests-2.22.0")
-sys.path.insert(1, "C:\\Users\\Kevino\\source\\chardet-3.0.4")
-sys.path.insert(1, "C:\\Users\\Kevino\\source\\urllib3-1.25.6\\src")
-sys.path.insert(1, "C:\\Users\\Kevino\\source\\certifi-2019.9.11")
-sys.path.insert(1, "C:\\Users\\Kevino\\source\\idna-2.8")
-sys.path.insert(1, "C:\\Users\\Kevino\\source\\beautifulsoup4-4.8.0")
-
 from bs4 import BeautifulSoup
 from requests import get
 import sqlite3
